@@ -1,0 +1,45 @@
+libros=[]
+precios=[]
+titulo=[]
+stock=50
+reportes=[]
+while True:
+    try:
+        menu=int(input("registros y ventas de libros \n(1)Registrar libro\n(2)listar todos los libros\n(3)Registrar venta\n(4)imprimir reporte de ventas\n(5)Salir\n"))
+    except():
+         print("ingrese una opcion valida")   
+    if menu==1:
+            log1=input("Ingrese Título del libro ")
+            log2=input("Ingrese Autor del libro ") 
+            log3=input("Ingrese Género del libro (ficcion, no ficcion, ciencia) ") 
+            log4=input("Ingrese Precio del libro ") 
+            if log1==("") or log2==("") or log3==("") or log4==(""):
+                print("Ingrese todos los datos ")
+            else:
+                titulo.append(log1)
+                libros.append(log1)
+                libros.append(log2)
+                libros.append(log3)
+                precios.append(log4)     
+            print("libro registrado correctamente")
+            print(log1)
+    elif menu==2:
+            print("los libros registrados son\n",titulo,libros)
+    elif menu==3:
+            print(f"los libros registrados y sus precios son\n{titulo}\n {precios}")
+            title=input("Ingrese titulo del libro vendido ")
+            cantidad=int(input("Ingrese la cantidad vendida "))
+            reportes.append(title)
+            reportes.append(cantidad)
+            total=cantidad-stock
+            if total>0 or total==0:
+                 print("no queda stock para concretar la compra")
+            else:
+                 print("Venta completada")     
+    elif menu==4:
+        imprimir=input("Desea imprimir todos o por genero ")
+        if imprimir==("todos"):
+            print(f"los reportes de venta son:\n{reportes}")
+    elif menu==5:
+        print("Cerrando programa...")
+        break
